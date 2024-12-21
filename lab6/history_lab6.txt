@@ -1,0 +1,170 @@
+    1  cd lab3/src
+    2  cd..
+    3  cd ..
+    4  history>history_lab3.txt
+    5  cd src
+    6  gcc -o sequential_min_max sequential_min_max.c find_min_max.c utils.c
+    7  ./sequential_min_max 12345 1000
+    8  all: sequential_min_max parallel_min_max test
+    9  make all
+   10  touch run_sequential_min_max.c
+   11  make run_sequential_min_max
+   12  ./run_sequential_min_max seed array_size
+   13  make run_sequential_min_max
+   14  ./run_sequential_min_max 12345 1000
+   15  make run_sequential_min_max
+   16  ./run_sequential_min_max 12345 1000
+   17  cd /workspaces/os_lab_2019/
+   18  git add lab3/find_min_max.c
+   19  git add lab3/src/find_min_max.c
+   20  git add lab3/src/makefile
+   21  git add lab3/src/parallel_min_max.c
+   22  git add lab3/src/run_sequential_min_max.c
+   23  git status
+   24  git commit -m "добавлен find_min_max.c, makefile, parallel_min_max.c, run_sequential_min_max.c".
+   25  git push
+   26  cd lab4/src
+   27  gcc -c find_min_max.c -o find_min_max.o
+   28  gcc -c utils.c -o utils.o
+   29  gcc -o parallel_min_max parallel_min_max.c find_min_max.c utils.c
+   30  ./parallel_min_max --seed 123 --array_size 1000 --pnum 4 --timeout 10
+   31  ./parallel_min_max --seed 123 --array_size 1000 --pnum 4
+   32  touch zombie.c
+   33  ./zombie
+   34  gcc -o zombie zombie.c
+   35  ./zombie
+   36  ps aux | grep Z
+   37  gcc -o process_memory process_memory.c
+   38  ./process_memory
+   39  make
+   40  gcc -o parallel_sum parallel_sum.c sum_lib.c utils.c -lpthread -Wall -Wno-format
+   41  touch sum_lib.c
+   42  touch sum_lib.h
+   43  gcc -o parallel_sum parallel_sum.c sum_lib.c utils.c -lpthread -Wall -Wno-format
+   44  make all
+   45  touch exec_sequential.c
+   46  make all
+   47  ./psum --threads_num 4 --seed 42 --array_size 1000000
+   48  nano sum_lib.h
+   49  ./psum --threads_num 4 --seed 42 --array_size 1000000
+   50  ./parallel_sum --threads_num 4 --seed 42 --array_size 1000000
+   51  cd ./num5
+   52  make
+   53  mkdir num5
+   54  mv parallel_sum.c ./num5
+   55  mv sum_lib.c sum_lib.h ./num5
+   56  cd num5
+   57  touch makefile
+   58  cd /workspaces/os_lab_2019/lab4/src
+   59  cp utils.c utils.h ./num5/utils.c ./num5/utils.h
+   60  cd..
+   61  cp utils.c utils.h ./num5/utils.c ./num5/utils.h
+   62  cp utils.c ./num5/utils.c
+   63  cp utils.h ./num5/utils.h
+   64  cd ./num5
+   65  make
+   66  cd /workspaces/os_lab_2019/lab4/
+   67  history > history_lab4.txt
+   68  git push
+   69  git status
+   70  git add ../lab3/history_lab3.txt
+   71  git add ../lab3/src/find_min_max.o
+   72  git add ../lab3/src/parallel_min_max
+   73  git add ../lab3/src/run_sequential_min_max
+   74  git add ../lab3/src/sequential_min_max
+   75  git add ../lab3/src/utils.o
+   76  git add history_lab4.txt
+   77  git add src/exec_sequential
+   78  git add src/exec_sequential.c
+   79  git add src/find_min_max.c
+   80  git add src/find_min_max.h
+   81  git add src/find_min_max.o
+   82  git add src/makefile
+   83  git add src/num5/
+   84  git add src/parallel_min_max
+   85  git add src/parallel_min_max copy.c
+   86  git add src/parallel_min_max.c
+   87  git add src/process_memory
+   88  git add src/process_memory.o
+   89  git add src/process_memory.c
+   90  git add src/sequential_min_max
+   91  git add src/sequential_min_max.c
+   92  git add src/utils.c
+   93  git add src/utils.h
+   94  git add src/utils.o
+   95  git add src/zombie
+   96  git add src/zombie.c
+   97  git status
+   98  git add src/num5/parallel_sum.c
+   99  git status
+  100  git pus
+  101  git push
+  102  git commit -m 
+  103  git commit -m "добавлен find_min_max.c, makefile, parallel_min_max.c".
+  104  git push
+  105  cd ..
+  106  cd lab5/src
+  107  gcc -o mutex mutex.c -lpthread
+  108  ./mutex
+  109  touch factorial.c
+  110  touch factorial.h
+  111  gcc -o factorial factorial.c -lpthread
+  112  ./factorial --k 10 --pnum 4 --mod 10
+  113  ./factorial --k 5 --pnum 2 --mod 100
+  114  touch deadlock_demo.c
+  115  gcc -o deadlock_demo deadlock_demo.c -lpthread
+  116  ./deadlock_demo
+  117  cd /workspaces/os_lab_2019
+  118  git add lab5/src/deadlock_demo.c
+  119  cd lab5
+  120  history > history_lab5.txt
+  121  git push
+  122  git commit -m ""
+  123  git commit -m "Добавлены файлы
+"
+  124  git push
+  125  cd lab6/src
+  126  gcc -c common.c -o common.o
+  127  touch common.c
+  128  cd src
+  129  touch common.c
+  130  touch common.h
+  131  cd ..
+  132  cd lab6
+  133  gcc -c common.c -o common.o
+  134  cd src
+  135  gcc -c common.c -o common.o
+  136  gcc -o client client.c common.o -lpthread
+  137  gcc -o server server.c common.o -lpthread
+  138  ./server --port 20001 --tnum 4 &
+  139  gcc -o client client.c common.o -lpthread
+  140  gcc -o server server.c common.o -lpthread
+  141  ./server --port 20001 --tnum 4 &
+  142  ./server --port 20002 --tnum 4 &
+  143  ./server --port 20003 --tnum 6 &
+  144  ./client --k 4  mod 7 --servers servers.txt
+  145  touch servers.txt
+  146  ./client --k 4  mod 7 --servers servers.txt
+  147  ./client --k 4 --mod 7 --servers servers.txt
+  148  touch makefile
+  149  gcc -c common.c -o common.o
+  150  gcc -o client client.c -pthread -L. -lcommon
+  151  ./client --k 4 --mod 7 --servers servers.txt
+  152  make rebuild
+  153  git status
+  154  git add client
+  155  git add client.o
+  156  git add common.c
+  157  git add common.h
+  158  git add common.o
+  159  git add libcommon.a
+  160  git add makefile
+  161  git add server
+  162  git add server.o
+  163  git add server.c
+  164  git add servers.txt
+  165  git commit -m "Added"
+  166  git push
+  167  git add client.c
+  168  git commit -m "Added"
+  169  history>history_lab6.txt
